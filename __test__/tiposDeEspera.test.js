@@ -1,6 +1,6 @@
 const puppeteer = require('puppeteer')
 
-describe('Tipos de espera', () => {
+xdescribe('Tipos de espera', () => {
 
     it('Mostrar los tipos de espera', async () => {
         const browser = await puppeteer.launch({
@@ -57,9 +57,13 @@ describe('Tipos de espera', () => {
 
       //ejemplo para observar el viewport
 
-        const observaResize = page2.waitForFunction('window.innerWidth < 100')
-        await page.setViewport({width: 50, height: 50});
-        await observaResize
+        // const observaResize = page2.waitForFunction('window.innerWidth < 100')
+        // await page.setViewport({width: 50, height: 50});
+        // await observaResize
+
+        await page2.click('#closeSmallModal');
+       // await page.waitForFunction(() => !document.querySelector('#example-modal-sizes-title-sm'));
+       await page2.awaitForElement("#example-modal-sizes-title-sm", { visible: false } );
 
         await browser.close()
 

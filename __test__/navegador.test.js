@@ -2,6 +2,9 @@
 const puppeteer = require('puppeteer');
 //escribi x para no lanzar esta prueba
 xdescribe('Mi primer test en puppeteer', () => {
+
+	//time out 
+	//jest.setTimeout(100000)
 	it('Debe abrir y cerrar el navegador', async () => {
 		const browser = await puppeteer.launch({
 				// headless: true hace que no se habara el navegador y que las pruebas sean
